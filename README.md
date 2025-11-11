@@ -37,7 +37,7 @@ The **ExCITE** ecosystem is an integrated collection of biomedical informatics p
 │   • Clinical Workflows           │   │  • Azure AD Integration      │
 │   • CDS Hooks 2.0                │   │  • Progress Tracking         │
 │   • Medical Imaging (DICOM)      │   │                              │
-│   Port: 3000 (UI), 8888 (FHIR)  │   │  Port: 5001 (API), 5173 (UI) │
+│   Port: 3000 (UI), 8888 (FHIR)   │   │  Port: 5001 (API), 5173 (UI) │
 └──────────────────────────────────┘   └──────────────────────────────┘
             │                                       │
             │ FHIR Data                             │ Assignment
@@ -57,8 +57,8 @@ The **ExCITE** ecosystem is an integrated collection of biomedical informatics p
 └──────────────────────────────────┘               │ Course
             ↑                                      │ Materials
             │ OMOP Queries                         ↓
-            │ (Optional)                ┌──────────────────────────────┐
-            └───────────────────────────│    InformaticsLessons        │
+            │ (Optional)               ┌──────────────────────────────┐
+            └──────────────────────────│    InformaticsCourses        │
                                        │  Course Materials Repository │
                                        │  • FHIR Assessments          │
                                        │  • CDS Assignments           │
@@ -137,7 +137,7 @@ The **ExCITE** ecosystem is an integrated collection of biomedical informatics p
 - Persistent workspaces (per-user volumes)
 - nbgitpuller course material distribution
 - Resource limits (CPU, memory) per user
-- Pre-configured for InformaticsLessons
+- Pre-configured for InformaticsCourses
 
 **Technology**: JupyterHub + DockerSpawner + PostgreSQL + NativeAuthenticator
 
@@ -181,7 +181,7 @@ The **ExCITE** ecosystem is an integrated collection of biomedical informatics p
 
 ---
 
-### 5. InformaticsLessons - Course Materials Repository
+### 5. InformaticsCourses - Course Materials Repository
 
 **Purpose**: Educational content repository for medical informatics courses
 
@@ -201,9 +201,9 @@ The **ExCITE** ecosystem is an integrated collection of biomedical informatics p
 - FHIR Assessment 1k, 2q, 3k (FHIR basics, queries, advanced)
 - CDS Assessment 1h, 2d, 3e (CDS introduction, development, evaluation)
 
-**Access**: https://github.com/ultraub/InformaticsLessons
+**Access**: https://github.com/ultraub/InformaticsCourses
 
-**Documentation**: [InformaticsLessons/README.md](InformaticsLessons/README.md)
+**Documentation**: [InformaticsCourses/README.md](InformaticsCourses/README.md)
 
 ---
 
@@ -211,12 +211,12 @@ The **ExCITE** ecosystem is an integrated collection of biomedical informatics p
 
 ### 1. Educational Assignment Flow
 
-**Workflow**: InformaticsClassroom → JupyterHubClassroom → InformaticsLessons → WintEHR/Broadsea
+**Workflow**: InformaticsClassroom → JupyterHubClassroom → InformaticsCourses → WintEHR/Broadsea
 
 **Data Flow**:
 1. **InformaticsClassroom** instructor assigns FHIR lesson
 2. Student logs into **JupyterHubClassroom**
-3. Clicks nbgitpuller link for **InformaticsLessons**
+3. Clicks nbgitpuller link for **InformaticsCourses**
 4. Materials cloned to student workspace
 5. Student queries **WintEHR** FHIR API from notebook
 6. Completes assignment, downloads for submission
@@ -231,10 +231,10 @@ The **ExCITE** ecosystem is an integrated collection of biomedical informatics p
 
 ### 2. Course Material Distribution
 
-**Workflow**: InformaticsLessons → JupyterHubClassroom
+**Workflow**: InformaticsCourses → JupyterHubClassroom
 
 **Data Flow**:
-1. **InformaticsLessons** GitHub repository updated
+1. **InformaticsCourses** GitHub repository updated
 2. Instructor generates nbgitpuller link
 3. Students access **JupyterHubClassroom**
 4. Click link → materials auto-cloned to workspace
@@ -386,7 +386,7 @@ python3 app.py
 |--------|---------|---------|----------|-----------------|-----------------|------------------|
 | **Broadsea** | 2 | 4GB | 10GB | 4 | 8GB | 50GB |
 | **InformaticsClassroom** | 2 | 4GB | 10GB | 4 | 8GB | 50GB |
-| **InformaticsLessons** | - | - | 50MB | - | - | 50MB |
+| **InformaticsCourses** | - | - | 50MB | - | - | 50MB |
 | **JupyterHubClassroom** | 4 | 8GB | 50GB | 8 | 16GB | 200GB |
 | **WintEHR** | 2 | 8GB | 20GB | 4 | 16GB | 100GB |
 
@@ -493,7 +493,7 @@ echo "POSTGRES_PASSWORD=$(openssl rand -base64 32)" >> .env
 # 3. Verify
 # - WintEHR: http://localhost:3000 (should show EHR login)
 # - JupyterHub: http://localhost:8000 (should show signup page)
-# - InformaticsLessons: Pre-configured in JupyterHub
+# - InformaticsCourses: Pre-configured in JupyterHub
 ```
 
 **Students can now**:
@@ -639,7 +639,7 @@ Individual module documentation and configuration:
 
 - **[Broadsea](Broadsea/README.md)** - OHDSI platform deployment and configuration
 - **[InformaticsClassroom](InformaticsClassroom/README.md)** - Learning management system
-- **[InformaticsLessons](InformaticsLessons/README.md)** - Course materials repository
+- **[InformaticsCourses](InformaticsCourses/README.md)** - Course materials repository
 - **[JupyterHubClassroom](JupyterHubClassroom/README.md)** - JupyterHub deployment and user management
 - **[WintEHR](WintEHR/README.md)** - FHIR EHR system and synthetic patient data
 
