@@ -1,4 +1,4 @@
-# ExCITE - Educational Excellence in Clinical Informatics and Technology Ecosystem
+# ExCITE - Educators’ Clinical Informatics Training Environment​
 
 **A comprehensive platform for biomedical informatics education and research**
 
