@@ -201,57 +201,7 @@ JUPYTERHUB_CRYPT_KEY=<generated-key>
 
 ### Optional Services (Enhanced Features)
 
-#### 3. Anthropic Claude API (WintEHR AI Features)
-
-**Purpose**: AI-powered clinical notes, differential diagnosis, treatment suggestions
-
-**Obtain API Key**:
-1. Go to https://console.anthropic.com/
-2. Sign up or log in
-3. Navigate to API Keys section
-4. Create new API key
-5. Copy key (starts with `sk-ant-`)
-
-**Configuration**:
-```bash
-# In WintEHR/config.yaml or .env
-ANTHROPIC_API_KEY=sk-ant-your-key-here
-```
-
-**Pricing**: Pay-per-use, see https://www.anthropic.com/pricing
-
-**Features Enabled**:
-- Clinical note generation
-- Differential diagnosis suggestions
-- Treatment plan recommendations
-- Patient education materials
-- Medical literature summarization (with Tavily)
-
-#### 4. Tavily API (WintEHR Web Research)
-
-**Purpose**: Web research for clinical references and literature
-
-**Obtain API Key**:
-1. Go to https://tavily.com/
-2. Sign up for account
-3. Create API key from dashboard
-4. Copy key (starts with `tvly-`)
-
-**Configuration**:
-```bash
-# In WintEHR/config.yaml or .env
-TAVILY_API_KEY=tvly-your-key-here
-```
-
-**Pricing**: Free tier available, paid plans for higher usage
-
-**Features Enabled**:
-- Medical literature search
-- Clinical guideline lookup
-- Drug information retrieval
-- Evidence-based medicine references
-
-#### 5. Azure Active Directory (InformaticsClassroom Production)
+#### 3. Azure Active Directory (InformaticsClassroom Production)
 
 **Purpose**: Enterprise single sign-on (SSO) and user management
 
